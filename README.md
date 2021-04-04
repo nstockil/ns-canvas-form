@@ -15,7 +15,7 @@ npm start
 # Custom Vision Information
 Portal: https://www.customvision.ai/
 
-##Custom Vision Documentation
+## Custom Vision Documentation
 - https://docs.microsoft.com/en-us/javascript/api/@azure/cognitiveservices-customvision-prediction/?view=azure-node-latest
 - https://docs.microsoft.com/en-us/azure/cognitive-services/Custom-Vision-Service/quickstarts/image-classification?tabs=visual-studio&pivots=programming-language-javascript#authenticate-the-client
 - https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Prediction_3.1/operations/5eb37d24548b571998fde5f3
