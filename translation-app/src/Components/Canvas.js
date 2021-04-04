@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Stage, Layer, Image } from "react-konva";
+import { getPrediction } from './azure-cognitiveservices-computervision';
 
 class Canvas extends Component {
   state = {
@@ -56,17 +57,33 @@ class Canvas extends Component {
     }
   };
 
-  handleTranslateClick = ({evt}) => {
-    const stage = this.image.getStage();
-    var dataURL = stage.toDataURL({ pixelRatio: 1 });
-    var letter = translateLetter(dataURL);
-    this.props.onExport(letter);
+  handleTranslateClick = ({ evt }) => {
+    const { canvas } = this.state;
+
+    canvas.toBlob((blob) => {
+      const reader = new FileReader();
+      reader.addEventListener('loadend', () => {
+        console.log(blob);
+        var letter = this.translateLetter(blob);
+      });
+      reader.readAsArrayBuffer(blob);
+    }, 'image/png');
   }
 
-  handleClearClick = ({evt}) => {
+  handleClearClick = ({ evt }) => {
     const { context, canvas } = this.state;
     context.clearRect(0, 0, canvas.width, canvas.height);
     this.image.getLayer().draw();
+  }
+
+  translateLetter(data) {
+    // Call to Custom Vision
+    var letter = "abc";
+    getPrediction(data).then((item) => {
+      console.log(item);
+      this.props.onExport(item);
+    });
+    return letter;
   }
 
   render() {
@@ -94,11 +111,6 @@ class Canvas extends Component {
       </div>
     );
   }
-}
-
-function translateLetter() {
-  // Call to Custom Vision
-  return 'E';
 }
 
 export default Canvas;
