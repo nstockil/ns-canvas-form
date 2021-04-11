@@ -36,5 +36,11 @@ set REACT_APP_COMPUTERVISIONENDPOINT="REPLACE-WITH-YOUR-ENDPOINT"
 
 
 
-set REACT_APP_COMPUTERVISIONKEY="41367de3e3014547818d6fc7df1a374f"
-set REACT_APP_COMPUTERVISIONENDPOINT="https://southcentralus.api.cognitive.microsoft.com/"
+set REACT_APP_COMPUTERVISIONKEY="cognitive services key"
+set REACT_APP_COMPUTERVISIONENDPOINT="cognitive services endpoint"
+
+To check if the variables are availabe in Node you can run the following:
+
+node -e 'console.log(process.env.REACT_APP_COMPUTERVISIONKEY)'
+
+node -e 'console.log(process.env.REACT_APP_COMPUTERVISIONENDPOINT)'

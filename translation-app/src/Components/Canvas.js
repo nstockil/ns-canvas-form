@@ -12,6 +12,8 @@ class Canvas extends Component {
     canvas.width = 450;
     canvas.height = 450;
     const context = canvas.getContext("2d");
+    context.fillStyle = "white";
+    context.fillRect(0, 0, canvas.width, canvas.height);
 
     this.setState({ canvas, context });
   }
@@ -72,7 +74,8 @@ class Canvas extends Component {
 
   handleClearClick = ({ evt }) => {
     const { context, canvas } = this.state;
-    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.fillStyle = "white";
+    context.fillRect(0, 0, canvas.width, canvas.height);
     this.image.getLayer().draw();
   }
 

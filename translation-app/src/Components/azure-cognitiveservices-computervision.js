@@ -8,10 +8,6 @@ const endpoint = process.env.REACT_APP_COMPUTERVISIONENDPOINT;
 const projectId = "<ProjectId>";
 const iterationName = "<Name>";
 
-console.log(`key = ${key}`)
-console.log(`endpoint = ${endpoint}`)
-
-
 export const isCustomVisionConfigured = () => {
     const result = (key && endpoint && (key.length > 0) && (endpoint.length > 0)) ? true : false;
     console.log(`key = ${key}`)
