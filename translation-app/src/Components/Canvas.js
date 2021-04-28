@@ -66,7 +66,7 @@ class Canvas extends Component {
       const reader = new FileReader();
       reader.addEventListener('loadend', () => {
         console.log(blob);
-        var letter = this.translateLetter(blob);
+        this.translateLetter(blob);
       });
       reader.readAsArrayBuffer(blob);
     }, 'image/png');
