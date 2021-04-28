@@ -22,6 +22,9 @@ Domains | General [A2] Domain
 
 
 # React
+React is a popular front-end Javascript framework. It uses JSX which combines HTML and Javascript to allow developers component based web apps.
+
+Today we'll be using it to build a prototype translation and learning app.
 
 # Using the React Example
 _See the Appendix for more information for setting up a React App from scratch._
@@ -54,11 +57,63 @@ node -e 'console.log(process.env.REACT_APP_COMPUTERVISIONENDPOINT)'
 ## 2. Clone the demo project
 Clone the demo project down using the command line:
 ```
-<INSERT GIT COMMANDS HERE>
+git clone https://github.com/nstockil/translationappprototype.git
 ```
-ADD OVERVIEW OF THE APPLICATION AND HOW IT WORKS HERE.
+
+When the code is downloaded, you can open it up in Visual Studio code.  Expand the file explorer and you will see the structure of the application.
+
+Most of the code you work with lives in the src folder. This is where you will see the main application (App.js), and the components used in the app. In this applciation we have 2 components and a helper class. Another important file is package.json. This describes the dependencies your project has.
+
+If you look in App.js you will see that we use components with JSX. This means we can use HTML like syntax to insert components. In this case we are using the ```Translator``` component.
+
+The ```Translator``` component contains a method called ```render```. This is an important method in a component as it defines how the component is presented to the user of the app. In this case we can see it will display another component called ```Canvas```, some button and a text area. We can also see however it will only show that if we can confirm cognitive services is configured on your machine. Otherwise it will show a warning message.
+
+```Translator``` also has a constructor where we have configured some event handlers for the buttons, and configures the state for the app.
+
+EXPLAIN WHAT STATE IN REACT IS HERE.
+
+If we look at the ```Canvas``` component next, what we see is that this creates a canvas to display to the user of the app.  It also contains the logic we require to draw on the canvas.  The canvas in this app is created used a package from npm called Konava.
+
+EXPLAIN KONVA.
+
+The component also has two buttons to work with the canvas. One to clear the canvas, and the other to trigger the translation process.  When translation is called, we export the image from the canvas, and send it to Cognitive Services for processing. To work with Cognitive Services we are using Microsoft Azure packages from npm.
+
+This brings us to the last part of the application we're going to look at before starting to work with the app - azure-cognitiveservices-computervision.js.
+
+This contains all the logic we need to work cognitive services.  We need to make an update here to specify the name of the project you created earlier, and the iteration of the project.  These will be used by the application to connect to Custom Vision.
+
+Note there are also variables here for the endpoint and key for the Cognitive Services instance you set up earlier. These are getting pulled from the environment variables that were set up earlier.
 
 ## 3. Running and Using the Application
+Now that we understand what the application is doing, we'll run it!
+
+Open the terminal in Visual Studio code and navigate to translation-app folder. This is the root of our application.
+
+```
+cd .\translation-app\
+```
+
+We then need to install the dependencies of the application. This is done by running the following command.
+
+```
+COMMAND TO INSTALL PACKAGES
+```
+
+This command reads the package.json file, mentioned earlier and installs the packages listed within it. This can take a few moments.
+
+Once this has completed, the application can be run using the following command:
+```
+npm start
+```
+This will build and deploy the application locally.  It may lauch your web browser for you. If it does not, it will print out the url for your application.
+
+It will likely be http://localhost:3000/ or similar.
+
+If any of the steps do not work, make sure that node is on your PATH environment variable and that the endpoint and key have been added to your Environment variables.
+
+Anytime you modify Environment Variables, you should restart any application using them.
+
+Once all debugged, you should be able to start using the application!
 
 # Appendix
 ## How to set up a React app from Scratch
@@ -81,6 +136,8 @@ For the demo project we used, the following packages were installed using the np
 npm install react@16.8.6 react-dom@16.8.6 konva react-konva @azure/
 cognitiveservices-customvision-prediction
 ```
+
+This is a very small taster of React. If interested in learning more, there is a Microsoft Learn course available on it. [Creating your first web apps with React](https://docs.microsoft.com/en-us/learn/paths/react/)
 
 # Custom Vision Information
 
