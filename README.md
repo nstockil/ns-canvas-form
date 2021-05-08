@@ -1,8 +1,15 @@
-# TODO:
-- Complete write up for demo.
-- put together slides.
+# Introduction
+This contains an example app that uses Cognitive Services (in particular Custom Vision) to classify images drawn by the user to letter to decode messages.
+
+The rest of the readme will talk about the services being used, explain the application and how to run it, and direct you to furhter reading. 
 
 # Custom Vision
+
+Azure Custom Vision is part of a suite of AI tools provided by Azure.  This suite is called Azure Cognitive Services and aims to help users build cognitive intelligence into applications.
+
+You do not require artificial intelligence or data science skills to use the service.
+
+Azure provides a set of SDKs and APIs to work with Cognitive Services.
 
 # Standing up a Custom Vision Service
 Go to the [Custom Vison Portal](https://www.customvision.ai/) and click on the New Project button.
@@ -70,11 +77,11 @@ The ```Translator``` component contains a method called ```render```. This is an
 
 ```Translator``` also has a constructor where we have configured some event handlers for the buttons, and configures the state for the app.
 
-EXPLAIN WHAT STATE IN REACT IS HERE.
+> State in react can be considered the storage for a component. Each component has a state object that contains the properties of the components. Generally this is initialized in the constructor of the the React component and can be updated throughout the life cycle of the component and application.
 
-If we look at the ```Canvas``` component next, what we see is that this creates a canvas to display to the user of the app.  It also contains the logic we require to draw on the canvas.  The canvas in this app is created used a package from npm called Konava.
+If we look at the ```Canvas``` component next, what we see is that this creates a canvas to display to the user of the app.  It also contains the logic we require to draw on the canvas.  The canvas in this app is created used a package from npm called Konva.
 
-EXPLAIN KONVA.
+> Konva is a 2D canvas javascript library. Konva React is an attempt to make React work with this library. It aims to use the same declarative mark up and similar data flow model.
 
 The component also has two buttons to work with the canvas. One to clear the canvas, and the other to trigger the translation process.  When translation is called, we export the image from the canvas, and send it to Cognitive Services for processing. To work with Cognitive Services we are using Microsoft Azure packages from npm.
 
@@ -96,7 +103,7 @@ cd .\translation-app\
 We then need to install the dependencies of the application. This is done by running the following command.
 
 ```
-COMMAND TO INSTALL PACKAGES
+npm install
 ```
 
 This command reads the package.json file, mentioned earlier and installs the packages listed within it. This can take a few moments.
@@ -139,11 +146,12 @@ cognitiveservices-customvision-prediction
 
 This is a very small taster of React. If interested in learning more, there is a Microsoft Learn course available on it. [Creating your first web apps with React](https://docs.microsoft.com/en-us/learn/paths/react/)
 
-# Custom Vision Information
-
-## Custom Vision Documentation
-- https://docs.microsoft.com/en-us/javascript/api/@azure/cognitiveservices-customvision-prediction/?view=azure-node-latest
-- https://docs.microsoft.com/en-us/azure/cognitive-services/Custom-Vision-Service/quickstarts/image-classification?tabs=visual-studio&pivots=programming-language-javascript#authenticate-the-client
-- https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Prediction_3.1/operations/5eb37d24548b571998fde5f3
-- https://docs.microsoft.com/en-us/azure/developer/javascript/tutorial/static-web-app/introduction
-
+# Reference Links
+- [Azure Cognitive Services Documentation](https://docs.microsoft.com/en-us/azure/cognitive-services/)
+- [Creating an image classification project with Custom Vision](https://docs.microsoft.com/en-us/azure/cognitive-services/Custom-Vision-Service/quickstarts/image-classification?tabs=visual-studio&pivots=programming-language-javascript#prerequisites)
+- [Custom Vison Portal](https://www.customvision.ai/)
+- [React](https://reactjs.org/)
+- [Creating your first web apps with React](https://docs.microsoft.com/en-us/learn/paths/react/)
+- [Konva React](https://konvajs.org/docs/react/index.html)
+- [Store application secrets safely during development](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/secure-net-microservices-web-applications/developer-app-secrets-storage)
+- [How to use Environment Variables keep your secret keys safe & secure!](https://hackernoon.com/how-to-use-environment-variables-keep-your-secret-keys-safe-secure-8b1a7877d69c)
