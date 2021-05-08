@@ -1,7 +1,7 @@
 # Introduction
 This contains an example app that uses Cognitive Services (in particular Custom Vision) to classify images drawn by the user to letter to decode messages.
 
-The rest of the readme will talk about the services being used, explain the application and how to run it, and direct you to furhter reading. 
+The rest of the readme will talk about the services being used, explain the application and how to run it, and direct you to further reading. 
 
 # Custom Vision
 
@@ -71,15 +71,15 @@ When the code is downloaded, you can open it up in Visual Studio code.  Expand t
 
 Most of the code you work with lives in the src folder. This is where you will see the main application (App.js), and the components used in the app. In this applciation we have 2 components and a helper class. Another important file is package.json. This describes the dependencies your project has.
 
-If you look in App.js you will see that we use components with JSX. This means we can use HTML like syntax to insert components. In this case we are using the ```Translator``` component.
+If you look in App.js you will see that we use components with JSX. This means we can use HTML like syntax to insert components. In this case we are using the `Translator` component.
 
-The ```Translator``` component contains a method called ```render```. This is an important method in a component as it defines how the component is presented to the user of the app. In this case we can see it will display another component called ```Canvas```, some button and a text area. We can also see however it will only show that if we can confirm cognitive services is configured on your machine. Otherwise it will show a warning message.
+The `Translator` component contains a method called `render`. This is an important method in a component as it defines how the component is presented to the user of the app. In this case we can see it will display another component called `Canvas`, some button and a text area. We can also see however it will only show that if we can confirm cognitive services is configured on your machine. Otherwise it will show a warning message.
 
-```Translator``` also has a constructor where we have configured some event handlers for the buttons, and configures the state for the app.
+`Translator` also has a constructor where we have configured some event handlers for the buttons, and configures the state for the app.
 
 > State in react can be considered the storage for a component. Each component has a state object that contains the properties of the components. Generally this is initialized in the constructor of the the React component and can be updated throughout the life cycle of the component and application.
 
-If we look at the ```Canvas``` component next, what we see is that this creates a canvas to display to the user of the app.  It also contains the logic we require to draw on the canvas.  The canvas in this app is created used a package from npm called Konva.
+If we look at the `Canvas` component next, what we see is that this creates a canvas to display to the user of the app.  It also contains the logic we require to draw on the canvas.  The canvas in this app is created used a package from npm called Konva.
 
 > Konva is a 2D canvas javascript library. Konva React is an attempt to make React work with this library. It aims to use the same declarative mark up and similar data flow model.
 
