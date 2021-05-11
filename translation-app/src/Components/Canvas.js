@@ -106,6 +106,9 @@ class Canvas extends Component {
               onTouchStart={this.handleMouseDown}
               onTouchEnd={this.handleMouseUp}
               onTouchMove={this.handleMouseMove}
+              onMouseMove={this.handleMouseMove}
+              onMouseDown={this.handleMouseDown}
+              onMouseUp={this.handleMouseUp}
             />
           </Layer>
         </Stage>

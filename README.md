@@ -46,7 +46,21 @@ To add the configurations to environment variabled, the following commands can b
 ```
 set REACT_APP_COMPUTERVISIONKEY="cognitive services key"
 set REACT_APP_COMPUTERVISIONENDPOINT="cognitive services endpoint"
+
+
+echo %REACT_APP_COMPUTERVISIONKEY%
+echo %REACT_APP_COMPUTERVISIONENDPOINT%
 ```
+
+Or using PowerShell
+```
+$env:REACT_APP_COMPUTERVISIONKEY = 'cognitive services key'
+$env:REACT_APP_COMPUTERVISIONENDPOINT = 'cognitive services endpoint'
+
+echo $env:REACT_APP_COMPUTERVISIONKEY
+echo $env:REACT_APP_COMPUTERVISIONENDPOINT
+```
+
 Once the variables have been added, you will need to restart the instance of VS Code that is running to ensure the changes will be made available.  When updating Environment variables you always need to refresh any open prompts or applications that are running to reload the variables.
 
 You can also check if the vaiables are available through node by running the following commands in the cmd prompt:
