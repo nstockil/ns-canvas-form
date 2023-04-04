@@ -1,4 +1,8 @@
 # Introduction
+These materials written for a workshop on using cognitive services in 2021, presented to a college level group.
+
+The materials have been left as is and are not actively maintained.
+
 This contains an example app that uses Cognitive Services (in particular Custom Vision) to classify images drawn by the user to letter to decode messages.
 
 The rest of the readme will talk about the services being used, explain the application and how to run it, and direct you to further reading. 
